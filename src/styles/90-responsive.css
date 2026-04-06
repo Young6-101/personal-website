@@ -1,0 +1,16 @@
+@media (max-width: 1024px) {
+  .nav-links { gap: 20px; }
+  .nav-link { font-size: 0.65rem; }
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .inspiration-card:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .section-title { font-size: 2rem; }
+  .skills-comprehensive { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 3.5rem; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}

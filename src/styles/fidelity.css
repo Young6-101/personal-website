@@ -1,0 +1,6 @@
+@import './00-base.css';
+@import './10-navigation-hero.css';
+@import './20-sections-skills.css';
+@import './40-inspiration.css';
+@import './50-contact-footer.css';
+@import './90-responsive.css';
