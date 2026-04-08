@@ -34,14 +34,24 @@ jobs:
     permissions:
       contents: read
       packages: read
+    env:
+      VM_HOST: ${{ secrets.VM_HOST }}
+      VM_USERNAME: ${{ secrets.VM_USERNAME }}
+      AZURE_VM_SSH_KEY: ${{ secrets.AZURE_VM_SSH_KEY }}
     steps:
+      - name: Validate deploy secrets
+        run: |
+          [ -n "$VM_HOST" ] || (echo "Missing secret: VM_HOST" && exit 1)
+          [ -n "$VM_USERNAME" ] || (echo "Missing secret: VM_USERNAME" && exit 1)
+          [ -n "$AZURE_VM_SSH_KEY" ] || (echo "Missing secret: AZURE_VM_SSH_KEY" && exit 1)
+
       - name: Deploy to Azure VM via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.VM_HOST }}
+          host: ${{ env.VM_HOST }}
           port: 22
-          username: ${{ secrets.VM_USERNAME }}
-          key: ${{ secrets.AZURE_VM_SSH_KEY}}
+          username: ${{ env.VM_USERNAME }}
+          key: ${{ env.AZURE_VM_SSH_KEY }}
           timeout: 60s
           command_timeout: 20m
           debug: true
