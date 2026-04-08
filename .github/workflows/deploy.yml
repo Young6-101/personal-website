@@ -35,12 +35,22 @@ jobs:
       contents: read
       packages: read
     steps:
+      - name: Check deploy secrets availability
+        env:
+          AZURE_VM_HOST: ${{ secrets.AZURE_VM_HOST }}
+          AZURE_VM_USERNAME: ${{ secrets.AZURE_VM_USERNAME }}
+          AZURE_VM_SSH_KEY: ${{ secrets.AZURE_VM_SSH_KEY }}
+        run: |
+          [ -n "$AZURE_VM_HOST" ] || (echo "Secret AZURE_VM_HOST is empty or unavailable" && exit 1)
+          [ -n "$AZURE_VM_USERNAME" ] || (echo "Secret AZURE_VM_USERNAME is empty or unavailable" && exit 1)
+          [ -n "$AZURE_VM_SSH_KEY" ] || (echo "Secret AZURE_VM_SSH_KEY is empty or unavailable" && exit 1)
+
       - name: Deploy to Azure VM via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.VM_HOST }}
+          host: ${{ secrets.AZURE_VM_HOST }}
           port: 22
-          username: ${{ secrets.VM_USERNAME }}
+          username: ${{ secrets.AZURE_VM_USERNAME }}
           key: ${{ secrets.AZURE_VM_SSH_KEY }}
           script: |
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
