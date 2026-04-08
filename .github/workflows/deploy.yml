@@ -24,7 +24,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./portfolio
+          context: .
           push: true
           tags: ghcr.io/young6-101/portfolio:latest
 
