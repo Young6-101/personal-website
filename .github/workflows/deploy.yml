@@ -26,7 +26,7 @@ jobs:
         with:
           context: ./portfolio
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/portfolio:latest
+          tags: ghcr.io/young6-101/portfolio:latest
 
   deploy:
     needs: build-and-push
@@ -42,5 +42,5 @@ jobs:
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             docker stop portfolio || true
             docker rm portfolio || true
-            docker pull ghcr.io/${{ github.repository_owner }}/portfolio:latest
-            docker run -d --name portfolio --restart always -p 8081:80 ghcr.io/${{ github.repository_owner }}/portfolio:latest
+            docker pull ghcr.io/young6-101/portfolio:latest
+            docker run -d --name portfolio --restart always -p 8081:80 ghcr.io/young6-101/portfolio:latest
