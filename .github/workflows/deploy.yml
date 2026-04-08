@@ -35,8 +35,8 @@ jobs:
       contents: read
       packages: read
     env:
-      VM_HOST: ${{ secrets.VM_HOST }}
-      VM_USERNAME: ${{ secrets.VM_USERNAME }}
+      VM_HOST: ${{ secrets.VM_HOST || vars.VM_HOST || secrets.AZURE_VM_HOST || vars.AZURE_VM_HOST }}
+      VM_USERNAME: ${{ secrets.VM_USERNAME || vars.VM_USERNAME || secrets.AZURE_VM_USERNAME || vars.AZURE_VM_USERNAME }}
       AZURE_VM_SSH_KEY: ${{ secrets.AZURE_VM_SSH_KEY }}
     steps:
       - name: Validate deploy secrets
