@@ -21,7 +21,8 @@ const educationHeaderStyles: Record<string, CSSProperties> = {
   sectionTitle: {
     fontFamily: "'Cinzel', serif",
     fontSize: '3rem',
-    color: '#D4AF37',
+    color: 'var(--gold)',
+    fontWeight: 700,
   },
 };
 

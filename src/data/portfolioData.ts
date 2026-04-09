@@ -25,25 +25,25 @@ export const metadata = [
 
 export const educationItems: EducationItem[] = [
   {
-    year: '2020 — 2022',
-    school: 'Parsons School of Design',
-    degree: 'MFA Design & Technology',
+    year: '2025 — 2027',
+    school: 'National University of Singapore',
+    degree: 'Master of Computing',
     description:
-      'Focused on computational design, physical computing, and emerging media. Thesis explored real-time data visualization in public spaces.',
+      'Specializing in Artificial Intelligence. Research focus on generative models and human-AI interaction. Teaching assistant for courses on machine learning and data science.',
   },
   {
-    year: '2016 — 2020',
-    school: 'MIT',
-    degree: 'BS Computer Science',
+    year: '2017 — 2020',
+    school: 'University of Illinois at Urbana-Champaign',
+    degree: 'Master of Landscape Architecture',
     description:
-      "Specialized in human-computer interaction and graphics. Research assistant at the Media Lab's Future Opera group.",
+      "Explored the intersection of urban design and digital fabrication. Thesis project on algorithmic urbanism, using generative design to optimize public spaces for social interaction.",
   },
   {
-    year: '2019',
-    school: 'School of Machines, Making & Make-Believe',
-    degree: 'Summer Residency',
+    year: '2013 — 2017 ',
+    school: 'Huazhong Agricultural University',
+    degree: 'Bachelor of Landscape Architecture',
     description:
-      'Intensive program on creative coding and machine learning for artists. Developed procedural animation systems.',
+      'Focused on sustainable design and ecological planning. Led a student project that won the national green design competition.',
   },
 ];
 
@@ -56,7 +56,7 @@ export const skillCategories: SkillCategory[] = [
   {
     icon: '◈',
     title: 'Machine Learning & AI',
-    items: ['TensorFlow', 'PyTorch', 'scikit-learn', 'NLP / Transformers', 'Computer Vision', 'MLOps'],
+    items: ['TensorFlow', 'PyTorch', 'NLP / Transformers'],
   },
   {
     icon: '◎',
@@ -66,7 +66,7 @@ export const skillCategories: SkillCategory[] = [
   {
     icon: '✦',
     title: 'Data & Cloud',
-    items: ['AWS / GCP', 'Docker', 'Pandas / NumPy', 'Tableau', 'Apache Spark', 'Kubernetes'],
+    items: ['AWS', 'Azure', 'Docker', 'Pandas / NumPy', 'Apache Spark'],
   },
 ];
 
@@ -101,20 +101,22 @@ export const projects: Project[] = [
   {
     id: 'project-i',
     sequence: 'SEQUENCE // I',
-    title: 'NEBULA<br/>PROTOCOL',
+    title: 'INSPIRA',
     description:
-      'A decentralized visualization engine that maps interstellar data packets in real-time. Built with WebGL, Three.js, and custom GLSL shaders for star-field density.',
-    image: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1200',
-    imageAlt: 'Nebula Project',
-    tags: ['THREE.JS', 'RUST', 'GLSL'],
-    overlayTags: ['WebGL', 'GLSL', 'Rust'],
-    badges: ['Creative Coding', 'Data Viz'],
+      'A rag',
+    image: '/images/Inspira-jpg.jpg',
+    imageAlt: 'Inspira Project',
+    imageFit: 'cover',
+    imagePosition: 'center 50%',
+    tags: ['TypeScript', 'Python', 'GLSL'],
+    overlayTags: ['RAG', 'MEMORYOS', 'Rust'],
+    badges: ['Frontend', 'Data Viz'],
     skillKeys: ['creative', 'data'],
   },
   {
     id: 'project-ii',
     sequence: 'SEQUENCE // II',
-    title: 'CHRONO<br/>SYNAPSE',
+    title: 'AI<br/>INTERVIEW',
     description:
       'Temporal data visualization for high-frequency trading platforms. Designed a bespoke UI system focused on cognitive load reduction and millisecond precision.',
     image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200',
@@ -127,7 +129,7 @@ export const projects: Project[] = [
   {
     id: 'project-iii',
     sequence: 'SEQUENCE // III',
-    title: 'VOID<br/>RESONANCE',
+    title: 'CR3O',
     description:
       "An immersive audio-visual installation exploring the concept of the digital afterlife. Uses procedural generation to create unique 'memory' shards for each visitor.",
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',

@@ -49,18 +49,21 @@ const educationTimelineStyles: Record<string, CSSProperties> = {
   timelineH3: {
     fontFamily: "'Cinzel', serif",
     fontSize: '1.5rem',
-    color: '#D4AF37',
+    color: 'var(--gold)',
     margin: '10px 0 5px',
+    fontWeight: 700,
   },
   timelineP: {
     fontSize: '0.85rem',
     color: '#AAA',
+    fontWeight: 400,
   },
   timelineDesc: {
     marginTop: '15px',
     fontSize: '0.8rem',
     color: '#777',
     lineHeight: '1.7',
+    fontWeight: 500,
   },
 };
 

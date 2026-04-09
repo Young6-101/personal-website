@@ -9,20 +9,22 @@ type ProjectMetaBlockProps = {
 
 export function ProjectMetaBlock({ tags, badges, hovered }: ProjectMetaBlockProps) {
   const tagStyle: CSSProperties = {
-    fontSize: '0.7rem',
-    color: '#888',
-    border: '1px solid #444',
-    padding: '2px 8px',
-    display: 'inline-flex',
-    alignItems: 'center',
+    fontSize: '0.98rem',
+    color: '#e2e2e2',
+    fontWeight: 500,
+    fontFamily: 'inherit',
+    letterSpacing: '0.06em',
+    lineHeight: 1.2,
+    textTransform: 'uppercase',
     whiteSpace: 'nowrap',
   };
 
   const tagsRowStyle: CSSProperties = {
     display: 'flex',
-    flexWrap: 'wrap',
-    gap: '5px',
-    alignItems: 'center',
+    flexDirection: 'column',
+    gap: '6px',
+    alignItems: 'flex-start',
+    marginTop: '24px',
   };
 
   const projectConnectionsStyle: CSSProperties = {

@@ -30,6 +30,8 @@ export type Project = {
   description: string;
   image: string;
   imageAlt: string;
+  imageFit?: 'cover' | 'contain';
+  imagePosition?: string;
   tags: string[];
   overlayTags: string[];
   badges: string[];
@@ -42,6 +44,8 @@ export type InspirationItem = {
   description: string;
   image: string;
   imageAlt: string;
+  imageFit?: 'cover' | 'contain';
+  imagePosition?: string;
 };
 
 export type ContactLink = {

@@ -70,8 +70,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           src={project.image}
           alt={project.imageAlt}
           loading="lazy"
-          className="h-full w-full object-cover transition-[transform,filter] duration-[800ms] [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]"
+          className="h-full w-full transition-[transform,filter] duration-[800ms] [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]"
           style={{
+            objectFit: project.imageFit ?? 'cover',
+            objectPosition: project.imagePosition ?? 'center',
             filter: hovered ? 'grayscale(0) contrast(1.2)' : 'grayscale(0.5) contrast(1.2)',
             transform: hovered ? 'scale(1.05)' : 'scale(1)',
           }}
