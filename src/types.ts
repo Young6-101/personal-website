@@ -23,6 +23,12 @@ export type SkillNode = {
   description: string;
 };
 
+export type PreviousWorkItem = {
+  id: string;
+  image: string;
+  imageAlt: string;
+};
+
 export type GalleryImage = {
   src: string;
   alt: string;

@@ -6,6 +6,7 @@ import { InspirationSection } from './components/InspirationSection';
 import { MetadataStrip } from './components/MetadataStrip';
 import { Navbar } from './components/Navbar';
 import { ProjectsSection } from './components/ProjectsSection';
+import { PreviousWorkSection } from './components/PreviousWorkSection';
 import { SectionHeader } from './components/SectionHeader';
 import { SkillsBlock } from './components/SkillsBlock';
 import { BackgroundDecor } from './components/BackgroundDecor';
@@ -38,6 +39,9 @@ function App() {
 
         <SectionHeader id="projects" label="SELECTED WORKS" title="Projects" />
         <ProjectsSection projects={projects} />
+
+        <SectionHeader id="previous-work" label="VISUAL ARCHIVE" title="Previous Work" />
+        <PreviousWorkSection />
 
         <SectionHeader id="inspiration" label="CREATIVE FUEL" title="Sources of Inspiration" />
         <InspirationSection items={inspirationItems} />
