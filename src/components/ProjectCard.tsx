@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { CSSProperties } from 'react';
 import type { Project } from '../types';
 import { ProjectMetaBlock } from './ProjectMetaBlock';
+import { ImageGalleryModal } from './ui/ImageGalleryModal';
 
 const projectStyles: Record<string, CSSProperties> = {
   projectCard: {
@@ -54,7 +55,13 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
+  const [galleryOpen, setGalleryOpen] = useState(false);
   const isEven = index % 2 === 1;
+
+  const galleryImages =
+    project.gallery && project.gallery.length > 0
+      ? project.gallery
+      : [{ src: project.image, alt: project.imageAlt, caption: project.imageAlt }];
 
   return (
     <article
@@ -65,7 +72,19 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="project-image" style={projectStyles.projectImage}>
+      <div
+        className="project-image"
+        style={{ ...projectStyles.projectImage, cursor: 'pointer' }}
+        onClick={() => setGalleryOpen(true)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setGalleryOpen(true);
+          }
+        }}
+      >
         <img
           src={project.image}
           alt={project.imageAlt}
@@ -75,7 +94,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             objectFit: project.imageFit ?? 'cover',
             objectPosition: project.imagePosition ?? 'center',
             filter: hovered ? 'grayscale(0) contrast(1.2)' : 'grayscale(0.5) contrast(1.2)',
-            transform: hovered ? 'scale(1.05)' : 'scale(1)',
+            transform: hovered
+              ? `scale(${(project.imageScale ?? 1) * 1.05})`
+              : `scale(${project.imageScale ?? 1})`,
           }}
         />
         <div
@@ -123,7 +144,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       <div className="project-info" style={projectStyles.projectInfo}>
-        <span className="project-id mb-2.5 block font-[var(--font-display)] text-[0.8rem] text-[var(--cyan)]">
+        <span
+          className="project-id mb-3 block text-[1.2rem] font-bold tracking-[0.08em] text-[var(--cyan)]"
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
           {project.sequence}
         </span>
         <h2
@@ -131,9 +155,27 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           style={{ fontFamily: 'var(--font-display)' }}
           dangerouslySetInnerHTML={{ __html: project.title }}
         />
+        {project.liveUrl ? (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mb-3 inline-block border border-[#4a4f57] px-3 py-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-[#a0a5ad] transition-colors duration-300 hover:text-[#c9ced6]"
+          >
+            Visit the Website ↗
+          </a>
+        ) : null}
         <p className="project-desc mb-[30px] text-[0.9rem] text-[#bbb]">{project.description}</p>
         <ProjectMetaBlock tags={project.tags} badges={project.badges} hovered={hovered} />
       </div>
+
+      <ImageGalleryModal
+        open={galleryOpen}
+        onClose={() => setGalleryOpen(false)}
+        title={project.title.replace(/<br\s*\/?>/g, ' ')}
+        images={galleryImages}
+        variant="landscape"
+      />
     </article>
   );
 }

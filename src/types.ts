@@ -23,15 +23,24 @@ export type SkillNode = {
   description: string;
 };
 
+export type GalleryImage = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
 export type Project = {
   id: string;
   sequence: string;
   title: string;
   description: string;
+  liveUrl?: string;
   image: string;
   imageAlt: string;
   imageFit?: 'cover' | 'contain';
   imagePosition?: string;
+  imageScale?: number;
+  gallery?: GalleryImage[];
   tags: string[];
   overlayTags: string[];
   badges: string[];
@@ -46,6 +55,7 @@ export type InspirationItem = {
   imageAlt: string;
   imageFit?: 'cover' | 'contain';
   imagePosition?: string;
+  gallery?: GalleryImage[];
 };
 
 export type ContactLink = {

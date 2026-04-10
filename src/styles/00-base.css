@@ -37,6 +37,30 @@ body {
   }
 }
 
+@keyframes galleryCardPop {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.94);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes galleryHalo {
+  0% {
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25), 0 0 10px rgba(212, 175, 55, 0.12);
+  }
+  100% {
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.55), 0 0 22px rgba(212, 175, 55, 0.28);
+  }
+}
+
 #chrono-background {
   position: fixed;
   top: 0;

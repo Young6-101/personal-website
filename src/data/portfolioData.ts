@@ -56,7 +56,7 @@ export const skillCategories: SkillCategory[] = [
   {
     icon: '◈',
     title: 'Machine Learning & AI',
-    items: ['TensorFlow', 'PyTorch', 'NLP / Transformers'],
+    items: ['Hugging Face', 'PyTorch', 'NLP / Transformers'],
   },
   {
     icon: '◎',
@@ -103,14 +103,27 @@ export const projects: Project[] = [
     sequence: 'SEQUENCE // I',
     title: 'INSPIRA',
     description:
-      'A rag',
+      'A creative exploration tool that transforms scattered inputs into structured insight. Users upload fragments—images, text, references—and Inspira leverages AI to detect patterns, surface connections, and guide ideas from chaos to clarity.',
+    liveUrl: 'https://inspira.innospace.dev/',
     image: '/images/Inspira-jpg.jpg',
     imageAlt: 'Inspira Project',
     imageFit: 'cover',
     imagePosition: 'center 50%',
-    tags: ['TypeScript', 'Python', 'GLSL'],
-    overlayTags: ['RAG', 'MEMORYOS', 'Rust'],
-    badges: ['Frontend', 'Data Viz'],
+    gallery: [
+      {
+        src: '/images/inspira_archive.png',
+        alt: 'Inspira archive page',
+        caption: 'Archive panel preview',
+      },
+      {
+        src: '/images/inspira_main.png',
+        alt: 'Inspira main page',
+        caption: 'Main interface and visual layer',
+      },
+    ],
+    tags: ['TYPESCRIPT', 'REACT', 'PYTHON', 'CSS'],
+    overlayTags: ['RAG', 'MEMORYOS', 'AI AGENT'],
+    badges: ['Frontend', 'Backend', 'AI', 'CI/CD'],
     skillKeys: ['creative', 'data'],
   },
   {
@@ -118,12 +131,26 @@ export const projects: Project[] = [
     sequence: 'SEQUENCE // II',
     title: 'AI<br/>INTERVIEW',
     description:
-      'Temporal data visualization for high-frequency trading platforms. Designed a bespoke UI system focused on cognitive load reduction and millisecond precision.',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200',
-    imageAlt: 'Chrono Project',
-    tags: ['REACT', 'D3.JS', 'FRAMER'],
-    overlayTags: ['React', 'D3.js', 'Framer'],
-    badges: ['Frontend', 'Data Viz'],
+      'An AI-assisted interview platform designed to simulate realistic interview scenarios and support reflective learning. It provides dynamic questioning, real-time feedback, and post-interview analysis to help users refine both thinking and communication.',
+    liveUrl: 'https://innospace.dev/',
+    image: '/images/ai-interview.png',
+    imageAlt: 'AI-Interview Project',
+    imagePosition: 'left',
+    gallery: [
+      {
+        src: '/images/ai-interview.png',
+        alt: 'AI Interview dashboard',
+        caption: 'Interview dashboard overview',
+      },
+      // {
+      //   src: '/images/book.jpg',
+      //   alt: 'AI Interview report view',
+      //   caption: 'Results report panel',
+      // },
+    ],
+    tags: ['REACT', 'TYPESCRIPT', 'PYTHON'],
+    overlayTags: ['React', 'AI AGENT', 'RAG', 'LangChain'],
+    badges: ['Frontend', 'Backend', 'AI', 'CI/CD'],
     skillKeys: ['frontend', 'data'],
   },
   {
@@ -131,9 +158,25 @@ export const projects: Project[] = [
     sequence: 'SEQUENCE // III',
     title: 'CR3O',
     description:
-      "An immersive audio-visual installation exploring the concept of the digital afterlife. Uses procedural generation to create unique 'memory' shards for each visitor.",
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
-    imageAlt: 'Void Project',
+      "A generative design experiment that blends algorithmic thinking with visual expression. Cr3o explores how systems, rules, and randomness can co-create evolving forms, turning creation into an interactive and iterative process.",
+    liveUrl: 'https://example.com/cr3o',
+    image: '/images/creo.jpg',
+    imageAlt: 'CR3O Project',
+    imageFit: 'cover',
+    imagePosition: 'right',
+    imageScale: 1,
+    gallery: [
+      {
+        src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
+        alt: 'CR3O installation frame',
+        caption: 'Hero visual frame',
+      },
+      {
+        src: '/images/movie.jpg',
+        alt: 'CR3O process snapshot',
+        caption: 'Process snapshot (replace with your real screenshot)',
+      },
+    ],
     tags: ['P5.JS', 'WEBAUDIO', 'OPENGL'],
     overlayTags: ['p5.js', 'WebAudio', 'OpenGL'],
     badges: ['Creative Coding', 'Immersive'],
@@ -149,6 +192,15 @@ export const inspirationItems: InspirationItem[] = [
       'In those games, I put my whole heart and effort — dedicated into second homes.',
     image: '/images/game.jpg',
     imageAlt: 'Brutalist Design',
+    gallery: [
+      { src: '/images/game/2077.jpg', alt: 'Cyberpunk 2077', caption: 'Moodboard frame 01' },
+      { src: '/images/game/the witcher.jpg', alt: 'The witcher', caption: 'Moodboard frame 02' },
+      { src: '/images/game/assassin.jpg', alt: 'Assassin\'s creed', caption: 'Moodboard frame 03' },
+      { src: '/images/game/fallout4.jpg', alt: 'Fallout 4', caption: 'Moodboard frame 03' },
+      { src: '/images/game/tombraider.jpg', alt: 'Tomb Raider', caption: 'Moodboard frame 03' },
+      { src: '/images/game/devil.jpg', alt: 'Devil May Cry 5', caption: 'Moodboard frame 03' },
+      { src: '/images/game/stardew.jpg', alt: 'Stardew Valley', caption: '600+ hours OMG, probably won\'t open it again for the rest of my life LOL' },
+    ],
   },
   {
     icon: '◈',
@@ -157,6 +209,13 @@ export const inspirationItems: InspirationItem[] = [
       'Fiction only. Words can weigh more than visuals.',
     image: '/images/book.jpg',
     imageAlt: 'Industrial Design',
+    gallery: [
+      { src: '/images/book/annihilation.jpg', alt: 'Annihilation', caption: 'Reading archive 01' },
+      { src: '/images/book/sympathizer-book.jpg', alt: 'The Sympathizer', caption: 'Reading archive 02' },
+      { src: '/images/book/lordoftherings.jpg', alt: 'Lord of the Rings', caption: 'Reading archive 03' },
+      { src: '/images/book/the scar.jpg', alt: 'The Scar', caption: 'Reading archive 03' },
+      { src: '/images/book/White_Noise.jpg', alt: 'White Noise', caption: 'Reading archive 04' },
+    ],
   },
   {
     icon: '⚡',
@@ -165,6 +224,18 @@ export const inspirationItems: InspirationItem[] = [
       'Not only enjoying movies but also stepping into the set myself, I see films from another perspective since then.',
     image: '/images/movie.jpg',
     imageAlt: 'Glitch Art',
+    gallery: [
+      { src: '/images/movie/arrival.jpg', alt: 'Arrival', caption: 'Film frame 03' },
+      { src: '/images/movie/bladerunner.jpg', alt: 'Blade Runner', caption: 'Film frame 02' },
+      { src: '/images/movie/sicario.jpg', alt: 'Sicario', caption: 'Film frame 03' },
+      { src: '/images/movie/2049.jpg', alt: 'Blade Runner 2049', caption: 'Film frame 03' },
+      { src: '/images/movie/matrix.jpg', alt: 'The Matrix', caption: 'Film frame 04' },
+      { src: '/images/movie/socialnetwork.jpg', alt: 'The Social Network', caption: 'Film frame 03' },
+      { src: '/images/movie/ghost in the shell.jpg', alt: 'Ghost in the shell', caption: 'Film frame 03' },
+      { src: '/images/movie/sympathizer-serires.jpg', alt: 'The Sympathizer', caption: 'Film frame 01' },
+      { src: '/images/movie/lotr.jpg', alt: 'Lord of the Rings', caption: 'Film frame 03' },
+      { src: '/images/movie/ninjia.jpg', alt: 'Ninja Scroll', caption: 'Film frame 04' },
+    ],
   },
   {
     icon: '♪',
@@ -173,6 +244,11 @@ export const inspirationItems: InspirationItem[] = [
       'Do I keep up?',
     image: '/images/music.jpg',
     imageAlt: 'Club Culture',
+    gallery: [
+      { src: '/images/music.jpg', alt: 'Music still 1', caption: 'Listening archive 01' },
+      { src: '/images/movie.jpg', alt: 'Music still 2', caption: 'Listening archive 02' },
+      { src: '/images/book.jpg', alt: 'Music still 3', caption: 'Listening archive 03' },
+    ],
   },
 ];
 
